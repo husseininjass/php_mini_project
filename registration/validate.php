@@ -12,10 +12,13 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     $phone = htmlspecialchars($_POST['phone']);
     $birthDate = htmlspecialchars($_POST['birth']);
     
-    // $query = "INSERT INTO users(fname , sname , tname , famname ,password, email , phone , birth) 
-    // VALUES ('$firstName' , '$secondName' , '$thirdName' , '$familyName' , '$password','$email' ,'$phone' , '$birthDate' ) ";
-    // $connection->exec($query);
-    
+    $query = "INSERT INTO users(fname , sname , tname , famname ,password, email , phone , birth) 
+    VALUES ('$firstName' , '$secondName' , '$thirdName' , '$familyName' , '$password','$email' ,'$phone' , '$birthDate' ) ";
+    $connection->exec($query);
+    session_start();
+    $_SESSION['email'] = $email;
+    $_SESSION['password'] = $password;
+    header("Location: login.html");
 }
 
 
