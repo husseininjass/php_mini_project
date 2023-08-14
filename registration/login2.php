@@ -1,3 +1,13 @@
+<?php 
+if (isset($_POST['email']) && isset($_POST['password'])) {
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    session_start();
+    $_SESSION['email'] = $email;
+    $_SESSION['password'] = $password;
+    
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +20,7 @@
 </head>
 <body>
     <h2 class="fs-1 text-center mt-5">Log In</h2>
-    <form action="login.php" method="post" class="text-center mt-lg-5">
+    <form action="<?= htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="text-center mt-lg-5">
         <div class="mb-5">
             <label for="" class="d-block">E-mail</label>
             <input type="email" class="w-25 email" name="email">
@@ -21,7 +31,7 @@
             <input type="password" class="w-25 password" name="password">
             <p class="text" style="color: red;font-size: 15px;"></p>
         </div>
-        <input type="submit" value="login" class="p-2 sub" >
+        <input type="submit" value="login" class="p-2 sub" name="submit">
     </form>
 </body>
 <script src="login.js"></script>
