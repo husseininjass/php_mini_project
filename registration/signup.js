@@ -8,6 +8,7 @@ let password = document.querySelector(".password");
 let cPassword = document.querySelector(".cpassword");
 let phone = document.querySelector(".phone");
 
+
 form.addEventListener('submit' , function(event){
     let phone_reg = /^\d{14}$/;
     let pwd_expression =/(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
