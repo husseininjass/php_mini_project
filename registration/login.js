@@ -1,12 +1,13 @@
 let form = document.querySelector("form");
 
 form.addEventListener('submit', function(e) {
+    
+    
     e.preventDefault();
-
     const email = document.querySelector('.email').value;
     const password = document.querySelector('.password').value;
-
-    let request = {
+    const wraning = document.querySelector('.text');
+    let sendBack = {
         email: email,
         password: password,
     };
@@ -16,10 +17,20 @@ form.addEventListener('submit', function(e) {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: JSON.stringify(request)
+        body: JSON.stringify(sendBack)
     })
     .then(r => r.json())
     .then(function(data){
         console.log(data);
+        data.forEach(function(e,i){
+            if(data[i].email === email && data[i].password === password){
+                console.log("yes");
+                window.location.href = "../view_page/welcome.html";
+            }
+            else{
+                wraning.textContent = "invalid email or password";
+            }
+        })
     })
+    
 });

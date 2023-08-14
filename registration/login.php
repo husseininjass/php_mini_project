@@ -1,18 +1,16 @@
 <?php include "connection.php" ?>
 <?php 
 if($_SERVER['REQUEST_METHOD'] === 'POST'){
-   
-
+    if(isset($_POST['email']) && isset($_POST['password'])){
+        $user_email = $_POST['email'];
+        $user_email = $_POST['password'];
+    }
     
-    // session_start();
-    // $_SESSION['email'] = $user_email;
-    // $_SESSION['password'] = $user_password;
-
-
+    
     $query = "SELECT * FROM users";
     $retrieve = $connection->query($query);
     $dataBase = $retrieve->fetchAll(PDO::FETCH_ASSOC);
     echo json_encode($dataBase);
-    // header("Location: login.html");
+    
 }
 ?>
