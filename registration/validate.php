@@ -43,7 +43,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     VALUES ('$firstName' , '$secondName' , '$thirdName' , '$familyName' , '$password','$email' ,'$phone' , '$birthDate' ) ";
     $connection->exec($query);
     
-    header("Location: login.html");
+    header("Location: login2.php");
     
 }
 
