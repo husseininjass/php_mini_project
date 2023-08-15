@@ -16,12 +16,11 @@ btn.addEventListener('click' ,function(){
               
                     table.innerHTML += `
                     <tr>
-                   
+                    
                     <td>${data.fname}</td>
                     <td>${data.phone}</td>
                     <td>${data.email}</td>
-                  
-                   
+
                     </tr>
 
                     `

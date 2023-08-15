@@ -42,3 +42,5 @@ form.addEventListener('submit' , function(event){
         phone.nextElementSibling.textContent = "phone number must be a 14 digits";
     }
 })
+
+  

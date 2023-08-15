@@ -1,17 +1,48 @@
 body{
-    background-color: #ccc;
+    background-image: url(sky-full-stars-silhouettes-trees.jpg);
+  
+}
+.main{
+    text-align: center;
+    padding: 3%;
+    border: 2px solid white;
+    background-color: rgba(128, 128, 128, 0.463);
+    width: 35vw;
+    height: 40vh;
+    backdrop-filter: blur(8px);
+    transform: translateY(50%);
+    border-radius: 3px;
+}
+h3{
+    color: white;
 }
 .title{
-    color: #322653;
+    color: white;
 }
 .button{
-    background-color: #322653;
-    color: white;
+    background-color: #5a546d;
+}
+.links{
+    display: flex;
+    justify-content: space-around;
+    padding: 1%;
 }
 a{
     text-decoration: none;
     border-radius: 3px;
-    background-color: #322653;
+    background-color: #605c6c;
     color: white;
-    box-shadow: 5px 5px 2px #eee;
+    font-size: 100%;
+}
+a:hover{
+    color: black;
+}
+
+@media(min-width: 250px) and (max-height: 1000px){
+    .main{
+        width: 60vw;
+    }
+    .links{
+        flex-wrap: wrap;
+    }
 }
