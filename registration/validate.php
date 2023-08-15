@@ -26,7 +26,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
     if (!filter_var($email_filter, FILTER_VALIDATE_EMAIL)) {
         exit();
     } 
-
+    
     $pattern_name = "/^[A-Za-z]+$/";
     $names = [$firstName , $secondName , $thirdName , $familyName];
     foreach($names as $name){

@@ -7,17 +7,12 @@ form.addEventListener('submit', function(e) {
     const password = document.querySelector('.password').value;
     const wraning = document.querySelector('.text');
     let status = false;
-    // let sendBack = {
-    //     email: email,
-    //     password: password,
-    // };
-
+   
     fetch('http://localhost/php_mini_project/registration/fetch.php', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
-        // body: JSON.stringify(sendBack)
     })
     .then(r => r.json())
     .then(function(data){
